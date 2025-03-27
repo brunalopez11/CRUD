@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Estudantes</title>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>CRUD de Estudantes</h2>
+
+        <h3>Cadastrar Estudante</h3>
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="email" id="email" placeholder="E-mail">
+        <button onclick="cadastrar()">Cadastrar</button>
+
+        <h3>Atualizar Estudante</h3>
+        <input type="number" id="updateId" placeholder="ID">
+        <input type="text" id="updateNome" placeholder="Novo Nome">
+        <input type="email" id="updateEmail" placeholder="Novo E-mail">
+        <button onclick="atualizar()">Atualizar</button>
+
+        <h3>Deletar Estudante</h3>
+        <input type="number" id="deleteId" placeholder="ID">
+        <button onclick="apagar()">Deletar</button>
+
+        <h3>Lista de Estudantes</h3>
+        <button onclick="pegaTodos()">Carregar Estudantes</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody id="listaEstudantes"></tbody>
+        </table>
+    </div>
+
+</body>
+</html>
